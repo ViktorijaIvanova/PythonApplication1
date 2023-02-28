@@ -1,10 +1,10 @@
-def get_population(city, cities):
-    if city in cities.keys():
-        return f'The population of {city} is {cities[city]} people.'
+def inimese(linnad, inimesed):
+    if linnad in linnad.keys():
+        return f"The population of {linnad} is {linnad[linnad]} people."
     else:
         return 'The city is not in the list.' 
-def show_inf(cities):
-    sorted_tuple = sorted(cities.items())
+def show_inf(linnad):
+    sorted_tuple = sorted(linnad.items())
     return sorted_tuple
 def most_pop(cities):
     big = 0
