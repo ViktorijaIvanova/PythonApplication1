@@ -1,27 +1,26 @@
 from Omamoodul import*
-cities = []
-populations = []
+linnad = []
+inimesed= []
 while True:
-        city = input('Введите название города. ')
-        population = int(input('Введите население этого города. '))
-        cities.append(city)
-        populations.append(population)
-        escape = input('Введите "q" для завершения ввода данных о городах \
-        или Enter для продолжения. ')
-        if escape.lower() == 'q':
+        linn = input("Sisetage nimi linnas:" )
+        inimes = int(input("sisetage inimesed sest linnas:" ))
+        linn.append(linnad)
+        inimes.append(inimesed)
+        väljuda=input("sisetage  "o" linnaandmete sisestamise lõpetamiseks \või jätkamiseks vajutage sisestusklahvi:")
+        if väljuda.lower() == "o":
             break
-city_dict = dict(zip(cities, populations))
+linnas_dict = dict(zip(linnad, inimesed))
 while True:
-    command = input('Команды: 1, 2, 3, 4, q ')
-    if command == '1':
-        city = input('Введите название города. ')
-        print(get_population(city, city_dict))
-    if command == '2':
-        print(show_inf(city_dict))
-    if command == '3':
-        print(most_pop(city_dict))
-    if command == '4':
-        num = int(input('Введите количество населения. '))
-        print(less(city_dict, num))
-    if command == 'q':
+    käsk = input("käsk:1-Uurige linna nime sisestades, kui palju elanikke selles on/ 2-tähestikuline linnade loetelu ja elanike arv/ 3-Sisestage elanike arv ja kuvage linna nimi, kus on lähim elanikke/ 4-Leidke linnad, kus on vähem kui n elanikku")
+    if käsk == "1":
+        city = input("sisetage nimi linnas:")
+        print(inimesed(linnad,linnas_dict ))
+    if käsk == "2":
+        print(show_inf(linnas_dict))
+    if käsk == "3":
+        print(most_pop(linnas_dict))
+    if käsk == "4":
+        num = int(input("Sisesta rahvaarv:"))
+        print(less(linnas_dict, num))
+    if käsk == 'q':
         break
